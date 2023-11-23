@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Random;
 
@@ -66,6 +67,27 @@ public class BadIOGUI {
                 }
             }
         });
+
+        final JPanel myPanel = new JPanel();
+        myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.X_AXIS));
+        canvas.remove(write);
+        canvas.add(myPanel, BorderLayout.CENTER);
+        myPanel.add(write);
+        final JButton read = new JButton("Read");
+        myPanel.add(read);
+        read.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    var s = Files.readAllLines(new File(PATH).toPath());
+                    System.out.println(s);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+            
+        });
     }
 
     private void display() {
@@ -90,6 +112,7 @@ public class BadIOGUI {
         /*
          * OK, ready to push the frame onscreen
          */
+        frame.pack();
         frame.setVisible(true);
     }
 
