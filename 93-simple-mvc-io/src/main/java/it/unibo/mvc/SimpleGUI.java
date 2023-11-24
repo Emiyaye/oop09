@@ -13,7 +13,7 @@ import javax.swing.JTextArea;
  * A very simple program using a graphical interface.
  * 
  */
-public final class SimpleGUI {
+public class SimpleGUI {
 
     private static final String title = "My first java graphical interface";
     private static final int PROPORTION = 2;

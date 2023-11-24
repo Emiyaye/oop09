@@ -16,7 +16,7 @@ public class Controller {
     private File file = new File(PATH);
 
     public void setFile(final File file) {
-        if (file.getParentFile().exists()){
+        if (file.getParentFile().exists()) {
             this.file = file;
         }
         else {
@@ -24,7 +24,7 @@ public class Controller {
         }
     }
 
-    public void setFile( final String file) {
+    public void setFile(final String file) {
         setFile(new File(file));
     }
 
