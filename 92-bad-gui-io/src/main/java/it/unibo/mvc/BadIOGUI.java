@@ -10,7 +10,9 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
@@ -79,9 +81,17 @@ public class BadIOGUI {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    var s = Files.readAllLines(new File(PATH).toPath());
-                    System.out.println(s);
+                /*  try {
+                                    var s = Files.readAllLines(new File(PATH).toPath());
+                                    System.out.println(s);
+                                } catch (IOException e1) {
+                                    e1.printStackTrace();
+                                } */
+                try (BufferedReader r = new BufferedReader(new FileReader(PATH))) { 
+                    String line = null;
+                    while((line = r.readLine()) != null){
+                        System.out.println(line);
+                    }
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
