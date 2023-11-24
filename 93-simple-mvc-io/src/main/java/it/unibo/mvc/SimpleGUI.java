@@ -36,10 +36,14 @@ public class SimpleGUI {
         final int sh = (int) screen.getHeight();
         frame.setSize(sw / PROPORTION, sh / PROPORTION);
         frame.setLocationByPlatform(true);
+    }
+
+    public void display() {
         frame.setVisible(true);
     }
 
     public static void main(String[] args) {
-        new SimpleGUI();
+        SimpleGUI simple = new SimpleGUI();
+        simple.display();
     }
 }
