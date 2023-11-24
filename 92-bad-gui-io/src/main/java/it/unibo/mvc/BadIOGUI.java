@@ -63,7 +63,7 @@ public class BadIOGUI {
                  */
                 try (PrintStream ps = new PrintStream(PATH, StandardCharsets.UTF_8)) {
                     ps.print(randomGenerator.nextInt());
-                } catch (IOException e1) {
+                } catch (final IOException e1) {
                     JOptionPane.showMessageDialog(frame, e1, "Error", JOptionPane.ERROR_MESSAGE);
                     e1.printStackTrace(); // NOPMD: allowed as this is just an exercise
                 }
@@ -80,7 +80,7 @@ public class BadIOGUI {
         read.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 /*  try {
                                     var s = Files.readAllLines(new File(PATH).toPath());
                                     System.out.println(s);
@@ -92,7 +92,7 @@ public class BadIOGUI {
                     while((line = r.readLine()) != null){
                         System.out.println(line);
                     }
-                } catch (IOException e1) {
+                } catch (final IOException e1) {
                     e1.printStackTrace();
                 }
             }
