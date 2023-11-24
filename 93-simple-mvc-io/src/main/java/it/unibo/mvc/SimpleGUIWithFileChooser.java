@@ -46,9 +46,10 @@ public final class SimpleGUIWithFileChooser {
             if (value == JFileChooser.APPROVE_OPTION) {
                 controller.setFile(fileChooser.getSelectedFile());
                 textField.setText(controller.getFilePath());
-            } else {}
-            
-            JOptionPane.showMessageDialog(frame, "ERRORE ORE OREEE", "ERRORE!!", JOptionPane.ERROR_MESSAGE);
+            } else if (value == JFileChooser.CANCEL_OPTION) {
+            } else {
+                JOptionPane.showMessageDialog(frame, "ERRORE ORE OREEE", "ERRORE!!", JOptionPane.ERROR_MESSAGE);
+            }
         });
 
         frame.setContentPane(canvas);
