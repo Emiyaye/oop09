@@ -19,12 +19,12 @@ public final class SimpleGUI {
     private final Controller controller = new SimpleController();
 
     public SimpleGUI() {
-        JPanel canvas = new JPanel();
-        JTextField myTextField = new JTextField(TEXTLENGHT);
+        final JPanel canvas = new JPanel();
+        final JTextField myTextField = new JTextField(TEXTLENGHT);
         canvas.setLayout(new BorderLayout());
         canvas.add(myTextField, BorderLayout.CENTER);
-        JButton print = new JButton("Print");
-        JButton history = new JButton("Show History");
+        final JButton print = new JButton("Print");
+        final JButton history = new JButton("Show History");
         canvas.add(print, BorderLayout.WEST);
         canvas.add(history, BorderLayout.EAST);
         print.addActionListener(e -> {
@@ -33,7 +33,7 @@ public final class SimpleGUI {
             myTextField.setText("");
         });
         history.addActionListener(e -> {
-            List<String> s = controller.history();
+            final List<String> s = controller.history();
             System.out.println(s);
         });
 
@@ -47,7 +47,7 @@ public final class SimpleGUI {
         frame.setVisible(true);
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         final SimpleGUI gui = new SimpleGUI();
         gui.display();
     }
