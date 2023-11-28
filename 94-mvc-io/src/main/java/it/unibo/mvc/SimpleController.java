@@ -5,11 +5,11 @@ import java.util.List;
 
 public class SimpleController implements Controller {
 
-    private List<String> string = new ArrayList<>();
+    private final List<String> string = new ArrayList<>();
     private int size;
     
     @Override
-    public void setString(String string) {
+    public void setString(final String string) {
         this.string.add(size, string);
         size++;
     }
