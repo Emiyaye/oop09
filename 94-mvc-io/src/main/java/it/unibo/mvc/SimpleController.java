@@ -29,7 +29,7 @@ public class SimpleController implements Controller {
         if (size == 0) {
             throw new IllegalStateException("Ugabuga");
         }
-        System.out.println(string.get(size));
+        System.out.println(string.get(size - 1));
     }
     
 }
