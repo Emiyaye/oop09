@@ -2,6 +2,7 @@ package it.unibo.mvc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class SimpleController implements Controller {
 
@@ -10,7 +11,7 @@ public class SimpleController implements Controller {
     
     @Override
     public void setString(final String string) {
-        this.string.add(size, string);
+        this.string.add(size, Objects.requireNonNull(string));
         size++;
     }
 
